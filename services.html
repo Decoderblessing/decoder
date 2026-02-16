@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Services | Decoder Technology</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: { "display": ["Space Grotesk"] }
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Space Grotesk', sans-serif; }
+        .glass { background: rgba(16, 22, 34, 0.8); backdrop-filter: blur(12px); }
+        .service-card:hover { transform: translateY(-10px); transition: all 0.3s ease; }
+    </style>
+</head>
+<body class="bg-background-dark text-white selection:bg-primary/30">
+
+ <nav class="fixed top-0 w-full z-50 glass border-b border-primary/10">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+            <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                <span class="material-icons text-white">code</span>
+            </div>
+            <span class="text-xl font-bold tracking-tight">DECODER<span class="text-primary">.</span></span>
+        </div>
+        
+        <div class="hidden md:flex items-center gap-8 font-medium">
+            <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+            <a href="services.html" class="hover:text-primary transition-colors">Services</a>
+            <a href="portfolio.html" class="hover:text-primary transition-colors">Portfolio</a>
+            <a href="about.html" class="hover:text-primary transition-colors">About</a>
+            <a href="contact.html" class="bg-primary text-white px-6 py-2.5 rounded-full hover:bg-primary/90 transition-all">Contact Us</a>
+        </div>
+
+        <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+            <span class="material-icons text-3xl">menu</span>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-background-dark/95 flex flex-col items-center justify-center gap-8 text-2xl font-bold transition-all duration-300">
+        <button id="close-btn" class="absolute top-6 right-6 text-white">
+            <span class="material-icons text-4xl">close</span>
+        </button>
+        <a href="index.html" class="hover:text-primary">Home</a>
+        <a href="services.html" class="hover:text-primary">Services</a>
+        <a href="portfolio.html" class="hover:text-primary">Portfolio</a>
+        <a href="about.html" class="hover:text-primary">About</a>
+        <a href="contact.html" class="text-primary">Contact Us</a>
+    </div>
+</nav>
+ 
+    <header class="pt-40 pb-20 px-6 text-center bg-gradient-to-b from-primary/10 to-transparent">
+        <h1 class="text-5xl lg:text-7xl font-bold mb-6">Our <span class="text-primary">Expertise</span></h1>
+        <p class="text-xl text-slate-400 max-w-2xl mx-auto">From high-performance web applications to stunning visual identities, we build tools that scale businesses.</p>
+    </header>
+
+    <section class="py-20 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="service-card p-10 bg-slate-900 border border-slate-800 rounded-3xl">
+            <span class="material-icons text-5xl text-primary mb-6">terminal</span>
+            <h3 class="text-2xl font-bold mb-4">Web Development</h3>
+            <p class="text-slate-400 mb-6">Scalable, secure, and lightning-fast websites built with React, Next.js, and Node.</p>
+            <ul class="text-sm space-y-2 text-slate-300">
+                <li class="flex items-center gap-2"><span class="material-icons text-primary text-xs">done</span> Custom E-commerce</li>
+                <li class="flex items-center gap-2"><span class="material-icons text-primary text-xs">done</span> SaaS Platforms</li>
+            </ul>
+        </div>
+
+        <div class="service-card p-10 bg-slate-900 border border-slate-800 rounded-3xl">
+            <span class="material-icons text-5xl text-primary mb-6">brush</span>
+            <h3 class="text-2xl font-bold mb-4">UI/UX Design</h3>
+            <p class="text-slate-400 mb-6">Human-centric design systems that reduce friction and increase user retention.</p>
+            <ul class="text-sm space-y-2 text-slate-300">
+                <li class="flex items-center gap-2"><span class="material-icons text-primary text-xs">done</span> Interactive Prototyping</li>
+                <li class="flex items-center gap-2"><span class="material-icons text-primary text-xs">done</span> Mobile App Design</li>
+            </ul>
+        </div>
+
+        <div class="service-card p-10 bg-slate-900 border border-slate-800 rounded-3xl">
+            <span class="material-icons text-5xl text-primary mb-6">auto_graph</span>
+            <h3 class="text-2xl font-bold mb-4">Graphics Design</h3>
+            <p class="text-slate-400 mb-6">Complete brand visual identities, including logos, stationery, and marketing assets.</p>
+            <ul class="text-sm space-y-2 text-slate-300">
+                <li class="flex items-center gap-2"><span class="material-icons text-primary text-xs">done</span> Logo & Branding</li>
+                <li class="flex items-center gap-2"><span class="material-icons text-primary text-xs">done</span> Print & Digital Assets</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">How We <span class="text-primary">Work</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-primary/20 text-primary rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">01</div>
+                    <h4 class="font-bold text-xl mb-2">Discovery</h4>
+                    <p class="text-slate-400 text-sm">We audit your goals and user needs.</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-primary/20 text-primary rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">02</div>
+                    <h4 class="font-bold text-xl mb-2">Design</h4>
+                    <p class="text-slate-400 text-sm">Crafting the visual blueprint.</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-primary/20 text-primary rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">03</div>
+                    <h4 class="font-bold text-xl mb-2">Development</h4>
+                    <p class="text-slate-400 text-sm">Coding the high-performance system.</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-primary/20 text-primary rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">04</div>
+                    <h4 class="font-bold text-xl mb-2">Launch</h4>
+                    <p class="text-slate-400 text-sm">Final QA and deployment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-16">Simple <span class="text-primary">Pricing</span></h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="p-10 border border-slate-800 rounded-3xl hover:border-primary transition-colors">
+                <h4 class="text-xl font-bold mb-2">Basic</h4>
+                <div class="text-4xl font-bold mb-6">₦150,000 <span class="text-sm font-normal text-slate-500">/ project</span></div>
+                <ul class="space-y-4 mb-10 text-slate-400">
+                    <li class="flex items-center gap-2"><span class="material-icons text-green-500">check_circle</span> 5 Page Website</li>
+                    <li class="flex items-center gap-2"><span class="material-icons text-green-500">check_circle</span> Basic SEO</li>
+                    <li class="flex items-center gap-2"><span class="material-icons text-green-500">check_circle</span> Mobile Responsive</li>
+                </ul>
+                <a href="https://wa.me/2347047085448" class="block text-center py-3 bg-slate-800 rounded-xl font-bold hover:bg-primary transition-colors">Get Started</a>
+            </div>
+
+            <div class="p-10 border-2 border-primary rounded-3xl relative">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-xs font-bold uppercase">Most Popular</div>
+                <h4 class="text-xl font-bold mb-2">Professional</h4>
+                <div class="text-4xl font-bold mb-6">₦700 <span class="text-sm font-normal text-slate-500">/ project</span></div>
+                <ul class="space-y-4 mb-10 text-slate-400">
+                    <li class="flex items-center gap-2"><span class="material-icons text-green-500">check_circle</span> Custom App Design</li>
+                    <li class="flex items-center gap-2"><span class="material-icons text-green-500">check_circle</span> CMS Integration</li>
+                    <li class="flex items-center gap-2"><span class="material-icons text-green-500">check_circle</span> Speed Optimization</li>
+                </ul>
+                <a href="https://wa.me/2347047085448" class="block text-center py-3 bg-primary rounded-xl font-bold shadow-lg shadow-primary/20">Select Plan</a>
+            </div>
+
+            <div class="p-10 border border-slate-800 rounded-3xl hover:border-primary transition-colors">
+                <h4 class="text-xl font-bold mb-2">Enterprise</h4>
+                <div class="text-4xl font-bold mb-6">Custom</div>
+                <ul class="space-y-4 mb-10 text-slate-400">
+                    <li class="flex items-center gap-2"><span class="material-icons text-green-500">check_circle</span> Dedicated Team</li>
+                    <li class="flex items-center gap-2"><span class="material-icons text-green-500">check_circle</span> Cloud Infrastructure</li>
+                    <li class="flex items-center gap-2"><span class="material-icons text-green-500">check_circle</span> 24/7 Support</li>
+                </ul>
+                <a href="https://wa.me/2347047085448" class="block text-center py-3 bg-slate-800 rounded-xl font-bold hover:bg-primary transition-colors">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-primary/10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-slate-500">© 2024 Decoder Technology. All rights reserved.</p>
+            <div class="flex gap-6">
+                <a href="https://wa.me/2347047085448" class="text-primary font-bold">Support: +234 704 708 5448</a>
+            </div>
+        </div>
+    </footer>
+
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    // Open Menu
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('hidden');
+    });
+
+    // Close Menu
+    closeBtn.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+    });
+
+    // Close Menu when a link is clicked
+    const navLinks = mobileMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+</script>
+
+</body>
+</html>

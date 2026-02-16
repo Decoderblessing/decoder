@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Portfolio | Decoder Technology</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: { "display": ["Space Grotesk"] }
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Space Grotesk', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
+        .glass { background: rgba(16, 22, 34, 0.85); backdrop-filter: blur(12px); }
+        .project-card { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); height: 100%; display: flex; flex-direction: column; }
+        .project-card:hover { transform: translateY(-12px); border-color: rgba(19, 91, 236, 0.4); }
+        .filter-btn.active { background: #135bec; color: white; border-color: #135bec; box-shadow: 0 10px 15px -3px rgba(19, 91, 236, 0.3); }
+        .category-tag { font-size: 0.65rem; letter-spacing: 0.1em; }
+        
+        /* Ensures images fit nicely */
+        .project-image { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .group:hover .project-image { transform: scale(1.1); }
+    </style>
+</head>
+<body class="bg-background-dark text-white selection:bg-primary/30 min-h-screen">
+
+    <nav class="fixed top-0 w-full z-50 glass border-b border-primary/10">
+        <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 md:w-10 md:h-10 bg-primary rounded-lg flex items-center justify-center">
+                    <span class="material-icons text-white text-sm md:text-base">code</span>
+                </div>
+                <span class="text-lg md:text-xl font-bold tracking-tight uppercase">Decoder<span class="text-primary">.</span></span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 font-medium">
+                <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+                <a href="services.html" class="hover:text-primary transition-colors">Services</a>
+                <a href="portfolio.html" class="text-primary">Portfolio</a>
+                <a href="about.html" class="hover:text-primary transition-colors">About</a>
+                <a href="contact.html" class="bg-primary text-white px-6 py-2.5 rounded-full hover:shadow-lg transition-all">Contact Us</a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden text-white">
+                <span id="menu-icon" class="material-icons text-3xl">menu</span>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-background-dark/98 flex flex-col items-center justify-center gap-8 text-2xl font-bold">
+            <button id="close-menu" class="absolute top-6 right-6">
+                <span class="material-icons text-4xl">close</span>
+            </button>
+            <a href="index.html" onclick="toggleMenu()">Home</a>
+            <a href="services.html" onclick="toggleMenu()">Services</a>
+            <a href="portfolio.html" class="text-primary" onclick="toggleMenu()">Portfolio</a>
+            <a href="about.html" onclick="toggleMenu()">About</a>
+            <a href="contact.html" onclick="toggleMenu()">Contact Us</a>
+        </div>
+    </nav>
+
+    <main class="pt-24 md:pt-40 pb-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-3xl mb-12 md:mb-16">
+                <h1 class="text-4xl md:text-8xl font-bold leading-tight mb-6">SELECTED <br/><span class="text-primary italic">WORKS</span></h1>
+                <p class="text-slate-400 text-base md:text-xl">
+                    From industrial cable infrastructure to high-end mobile experiences, we decode complex problems into visual solutions.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap gap-2 md:gap-4 mb-12">
+                <button class="filter-btn active border border-slate-700 px-5 py-2 rounded-xl font-bold text-sm md:text-base transition-all" onclick="filterProjects('all')">All</button>
+                <button class="filter-btn border border-slate-700 px-5 py-2 rounded-xl font-bold text-sm md:text-base transition-all" onclick="filterProjects('web')">Web Dev</button>
+                <button class="filter-btn border border-slate-700 px-5 py-2 rounded-xl font-bold text-sm md:text-base transition-all" onclick="filterProjects('uiux')">UI/UX Design</button>
+                <button class="filter-btn border border-slate-700 px-5 py-2 rounded-xl font-bold text-sm md:text-base transition-all" onclick="filterProjects('branding')">Branding</button>
+            </div>
+
+            <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                
+                <div class="project-item web" data-category="web">
+                    <div class="project-card bg-slate-900/40 border border-white/5 rounded-3xl overflow-hidden group">
+                        <div class="aspect-video bg-slate-800 relative overflow-hidden">
+                            <div class="absolute inset-0 flex items-center justify-center p-12">
+                                <img src="https://mcbellasupremeresourcesltd.com.ng/wp-content/uploads/2023/07/mcbella-logo.png" class="w-full opacity-60 group-hover:scale-110 transition-transform duration-500" alt="McBella Logo">
+                            </div>
+                            <div class="absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a href="https://mcbellasupremeresourcesltd.com.ng" target="_blank" class="bg-white text-primary px-6 py-2 rounded-full font-bold flex items-center gap-2">
+                                    Visit Site <span class="material-icons text-sm">open_in_new</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <span class="category-tag text-primary font-black uppercase">Industrial Web Dev</span>
+                            <h3 class="text-xl md:text-2xl font-bold mt-1">McBella Supreme Resources</h3>
+                            <p class="text-slate-500 mt-3 text-sm flex-grow">A high-performance cable catalog for one of Nigeria's leading electrical dealers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item web" data-category="web">
+                    <div class="project-card bg-slate-900/40 border border-white/5 rounded-3xl overflow-hidden group">
+                        <div class="aspect-video bg-slate-800 relative overflow-hidden">
+                            <div class="absolute inset-0 flex items-center justify-center bg-blue-900/20">
+                                <span class="material-icons text-6xl text-primary/30">bolt</span>
+                            </div>
+                            <div class="absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a href="https://www.iniblesselect.com.ng" target="_blank" class="bg-white text-primary px-6 py-2 rounded-full font-bold flex items-center gap-2">
+                                    Visit Site <span class="material-icons text-sm">open_in_new</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <span class="category-tag text-primary font-black uppercase">E-Commerce</span>
+                            <h3 class="text-xl md:text-2xl font-bold mt-1">Inibless Electrical Services</h3>
+                            <p class="text-slate-500 mt-3 text-sm flex-grow">A modern B2B electrical distribution platform with specialized inventory management.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item uiux" data-category="uiux">
+                    <div class="project-card bg-slate-900/40 border border-white/5 rounded-3xl overflow-hidden group">
+                        <div class="aspect-video bg-[#0A100D] relative flex items-center justify-center">
+                            <span class="text-green-500 font-bold text-2xl tracking-tighter uppercase italic">CoolBreeze.ng</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="category-tag text-green-500 font-black uppercase">Service UI Design</span>
+                            <h3 class="text-xl md:text-2xl font-bold mt-1">CoolBreeze HVAC</h3>
+                            <p class="text-slate-500 mt-3 text-sm">High-conversion interface for premium AC installation and maintenance in Lagos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item uiux" data-category="uiux">
+                    <div class="project-card bg-slate-900/40 border border-white/5 rounded-3xl overflow-hidden group">
+                        <div class="aspect-video bg-orange-950/20 flex items-center justify-center">
+                            <span class="material-icons text-6xl text-orange-600">restaurant_menu</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="category-tag text-orange-600 font-black uppercase">Mobile UX</span>
+                            <h3 class="text-xl md:text-2xl font-bold mt-1">Fine Dining Checkout</h3>
+                            <p class="text-slate-500 mt-3 text-sm">Luxury food delivery UX with integrated payment flow and order tracking.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item branding" data-category="branding">
+                    <div class="project-card bg-slate-900/40 border border-white/5 rounded-3xl overflow-hidden group">
+                        <div class="aspect-video bg-purple-900/20 flex items-center justify-center">
+                            <div class="text-center">
+                                <span class="material-icons text-5xl text-purple-500">terminal</span>
+                                <p class="font-bold text-xs mt-2 opacity-50">DECODER ACADEMY</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <span class="category-tag text-purple-400 font-black uppercase">Identity Design</span>
+                            <h3 class="text-xl md:text-2xl font-bold mt-1">Decoder Academy</h3>
+                            <p class="text-slate-500 mt-3 text-sm">Full visual branding for our tech-education wing, from logos to ad flyers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item branding" data-category="branding">
+                    <div class="project-card bg-slate-900/40 border border-white/5 rounded-3xl overflow-hidden group">
+                        <div class="aspect-video bg-orange-500/10 flex items-center justify-center">
+                            <span class="material-icons text-6xl text-orange-600">delivery_dining</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="category-tag text-orange-600 font-black uppercase">Print Media</span>
+                            <h3 class="text-xl md:text-2xl font-bold mt-1">Penael Logistics</h3>
+                            <p class="text-slate-500 mt-3 text-sm">Professional business card and brand asset design for a delivery startup.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-12 border-t border-primary/10">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6">Want to see more?</h2>
+            <a href="contact.html" class="bg-primary text-white px-8 py-3 rounded-full font-bold hover:scale-105 transition-all inline-block">Start a Conversation</a>
+            <p class="mt-12 text-slate-500 text-sm">© 2026 Decoder Technology. Built with precision.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenu = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+            document.body.style.overflow = mobileMenu.classList.contains('hidden') ? 'auto' : 'hidden';
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        closeMenu.addEventListener('click', toggleMenu);
+
+        // Filter Logic
+        function filterProjects(category) {
+            const items = document.querySelectorAll('.project-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Update button styles
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.innerText.toLowerCase().includes(category) || (category === 'all' && btn.innerText === 'All')) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Filter items with a smooth fade
+            items.forEach(item => {
+                item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 10);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

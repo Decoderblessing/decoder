@@ -1,338 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Decoder Technology | Innovative Digital Solutions</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: { "display": ["Space Grotesk"] }
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Space Grotesk', sans-serif; }
+        .slide { display: none; }
+        .slide.active { display: block; animation: fadeIn 0.8s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .glass { background: rgba(16, 22, 34, 0.8); backdrop-filter: blur(12px); }
+    </style>
 </head>
-<body>
-    <!---Header-->
-    <header>
-        <h1 class="h1">
-            <img src="logo.jpg" alt="Logo">DECODER <span>TECHNOLOGY</span>
-        </h1>
-        <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">&#9776;</button>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#book">Book Me</a></li>
-                <li><a href="#contact">Contact Me</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#tutor">Tutor</a></li>
-            </ul>
-        </nav>
-    </header>
-<!--home page-->    
-<section class="slider" id="home">
-    <div class="slider-content">
-      <h1 id="slider-text">Decoder Technology</h1>
-      <a href="#contact" class="contact-btn">Contact Me</a>
-    </div>
-  </section>
-<!--about page -->
-<section class="about-section" id="about">
-    <div class="about-container">
-      <div class="about-text">
-        <h2>Who We Are?</h2>
-        <p><strong>Decoder Technology</strong> is a young and talented web developer committed in improving the world by building websites and web projects for businesses and individuals across the globe.</p>
-      </div>
-      <div class="about-image">
-        <img src="me.jpg" alt="About Image">
-      </div>
-    </div>
-  </section>
+<body class="bg-background-dark text-white selection:bg-primary/30">
 
-  <section class="cards-section">
-    <div class="card" data-delay="0">
-      <h3>Our Motto</h3>
-      <p>Time and Quality</p>
-    </div>
-    <div class="card" data-delay="200">
-      <h3>Our Vision</h3>
-      <p>To reach over 1,000 clients within a year</p>
-    </div>
-    <div class="card" data-delay="400">
-      <h3>Our Mission</h3>\
-      <p>To empower businesses and individuals through cutting-edge, responsive, and impactful digital solutions.</p>
-    </div>
-  </section>
-  <!--services-->
-<!-- Services Page -->
-<section class="services-section" id="services">
-  <h2 class="section-title">Our Packages</h2>
-  <div class="services-container">
-    
-    <!-- Basic Packages -->
-    <div class="service-card">
-      <img src="services.jpg" alt="Basic Package 1">
-      <h3>Basic Package: Service Website</h3>
-      <p>Perfect for small service providers like plumbers, electricians, or construction companies. Includes homepage, services page, and contact form.</p>
-      <a href="https://example.com/basic1" target="_blank">View Sample</a>
-    </div>
-
-    <div class="service-card">
-      <img src="construct.jpg" alt="Basic Package 2">
-      <h3>Basic Package: Construction Firm</h3>
-      <p>A site for showcasing projects, services, and customer testimonials for construction businesses.</p>
-      <a href="https://example.com/basic2" target="_blank">View Sample</a>
-    </div>
-
-    <!-- Standard Packages -->
-    <div class="service-card">
-      <img src="e-commerces.jpg" alt="Standard Package 1">
-      <h3>Standard Package: E-commerce Site</h3>
-      <p>Ideal for businesses selling products online. Features product pages, cart, payment integration, and admin dashboard.</p>
-      <a href="https://example.com/standard1" target="_blank">View Sample</a>
-    </div>
-
-    <div class="service-card">
-      <img src="online.jpg" alt="Standard Package 2">
-      <h3>Standard Package: Online Retailer</h3>
-      <p>Suited for boutique stores or digital shops. Includes inventory management and responsive mobile design.</p>
-      <a href="https://example.com/standard2" target="_blank">View Sample</a>
-    </div>
-
-    <!-- Complex Packages -->
-    <div class="service-card">
-      <img src="school.jpg" alt="Complex Package 1">
-      <h3>Complex Package: School Management</h3>
-      <p>Comprehensive system for managing students, teachers, classes, results, and communications.</p>
-      <a href="https://example.com/complex1" target="_blank">View Sample</a>
-    </div>
-
-    <div class="service-card">
-      <img src="free.jpg" alt="Complex Package 2">
-      <h3>Complex Package: Freelancer Platform</h3>
-      <p>Platform like Freelancer or Fiverr with profile creation, bidding system, payments, and messaging.</p>
-      <a href="https://example.com/complex2" target="_blank">View Sample</a>
-    </div>
-
-  </div>
-</section>
-<!--portfolio-->
-<!-- Portfolio Page -->
-<section class="portfolio-section" id="portfolio">
-  <h2 class="section-title">Recent Projects</h2>
-  <div class="portfolio-container">
-
-    <div class="portfolio-card">
-      <img src="coffe.JPG" alt="Project 1">
-      <h3>Restaurant Website</h3>
-      <p>A responsive website for a local restaurant with an interactive menu and online reservation system.</p>
-      <a href="https://amazing-taffy-c44a07.netlify.app/" target="_blank">View Project</a>
-    </div>
-
-    <div class="portfolio-card">
-      <img src="fashion.jpg" alt="Project 2">
-      <h3>Fashion E-Commerce Store</h3>
-      <p>Built with a modern UI and a secure payment gateway, perfect for online clothing sales.</p>
-      <a href="tlca.com.ng" target="_blank">View Project</a>
-    </div>
-
-    <div class="portfolio-card">
-      <img src="sch.jpg" alt="Project 3">
-      <h3>School Portal</h3>
-      <p>A complete school management system with student profiles, results, and admin dashboard.</p>
-      <a href="https://www.schoolsportal.com.ng" target="_blank">View Project</a>
-    </div>
-
-  </div>
-</section>
-<!--book me-->
-<!-- Book Me Section -->
-<section class="book-section" id="book">
-  <h2 class="section-title">Book Me</h2>
-  <form id="bookingForm" class="booking-form">
-    <div class="form-group">
-      <label>First Name</label>
-      <input type="text" id="firstName" required>
-    </div>
-    <div class="form-group">
-      <label>Last Name</label>
-      <input type="text" id="lastName" required>
-    </div>
-    <div class="form-group">
-      <label>Company Name</label>
-      <input type="text" id="companyName">
-    </div>
-    <div class="form-group">
-      <label>What do you sell or provide?</label>
-      <input type="text" id="serviceProvided">
-    </div>
-    <div class="form-group">
-      <label>Are you the CEO?</label>
-      <select id="isCeo" required>
-        <option value="">Select</option>
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label>Package Type</label>
-      <select id="packageType" required>
-        <option value="">Select Package</option>
-        <option value="Basic Package">Basic Package</option>
-        <option value="Standard Package">Standard Package</option>
-        <option value="E-commerce Package">E-commerce Package</option>
-        <option value="Complex Package">Complex Package</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label>More Info</label>
-      <textarea id="moreInfo" rows="5" placeholder="Describe your project..."></textarea>
-    </div>
-    <button type="submit" class="submit-btn">Send Booking</button>
-  </form>
-</section>
-<!-- Contact Me Section -->
-<section class="contact-section" id="contact">
-  <h2 class="section-title">Contact Me</h2>
-  <form id="contactForm" class="contact-form">
-    <div class="form-group">
-      <label>Name</label>
-      <input type="text" id="contactName" required>
-    </div>
-
-    <div class="form-group">
-      <label>Telephone</label>
-      <input type="tel" id="contactTel" required>
-    </div>
-
-    <div class="form-group">
-      <label>Business Name</label>
-      <input type="text" id="businessName">
-    </div>
-
-    <div class="form-group">
-      <label>Reason for Contact</label>
-      <textarea id="contactReason" rows="5" placeholder="Tell me what you need..."></textarea>
-    </div>
-
-    <button type="submit" class="submit-btn">Send Message</button>
-  </form>
-</section>
-<!--review-->
-
-    <section class="review-section">
-        <h2>Rate Our Service</h2>
-        <div class="rating">
-            <span class="star" data-value="1">&#9733;</span>
-            <span class="star" data-value="2">&#9733;</span>
-            <span class="star" data-value="3">&#9733;</span>
-            <span class="star" data-value="4">&#9733;</span>
-            <span class="star" data-value="5">&#9733;</span>
+  <nav class="fixed top-0 w-full z-50 glass border-b border-primary/10">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+            <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                <span class="material-icons text-white">code</span>
+            </div>
+            <span class="text-xl font-bold tracking-tight">DECODER<span class="text-primary">.</span></span>
         </div>
-        <textarea id="reviewMessage" placeholder="Write your review here..."></textarea>
-        <button id="submitReview">Submit Review</button>
-    </section>
-
-    <section class="reviews-container">
-        <h3>What Our Clients Say</h3>
-        <div class="reviews" id="reviewsList">
-            <!-- Pre-existing reviews will be injected here -->
+        
+        <div class="hidden md:flex items-center gap-8 font-medium">
+            <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+            <a href="services.html" class="hover:text-primary transition-colors">Services</a>
+            <a href="portfolio.html" class="hover:text-primary transition-colors">Portfolio</a>
+            <a href="about.html" class="hover:text-primary transition-colors">About</a>
+            <a href="contact.html" class="bg-primary text-white px-6 py-2.5 rounded-full hover:bg-primary/90 transition-all">Contact Us</a>
         </div>
-    </section>
-<!-- Newsletter Section -->
-<section class="newsletter">
-  <div class="newsletter-left">
-    <h3>Sign up to our newsletter</h3>
-    <p>Receive updates & information</p>
-  </div>
-  <div class="newsletter-right">
-    <form id="newsletterForm">
-      <label for="newsletterEmail">Your Email:</label>
-      <input type="email" id="newsletterEmail" name="email" placeholder="Enter your email" required>
-      <button type="submit">Submit</button>
-    </form>
-  </div>
-</section>
 
-    <!-- Learn Code Heading -->
-    <header class="learn-code-header">
-        <h1>Learn Code</h1>
+        <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+            <span class="material-icons text-3xl">menu</span>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-background-dark/95 flex flex-col items-center justify-center gap-8 text-2xl font-bold transition-all duration-300">
+        <button id="close-btn" class="absolute top-6 right-6 text-white">
+            <span class="material-icons text-4xl">close</span>
+        </button>
+        <a href="index.html" class="hover:text-primary">Home</a>
+        <a href="services.html" class="hover:text-primary">Services</a>
+        <a href="portfolio.html" class="hover:text-primary">Portfolio</a>
+        <a href="about.html" class="hover:text-primary">About</a>
+        <a href="contact.html" class="text-primary">Contact Us</a>
+    </div>
+</nav>
+    <header class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div id="slide1" class="slide active w-full">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-6xl lg:text-8xl font-bold leading-none mb-8">
+                        WE CREATE <br/> <span class="text-primary italic">WEBSITES</span>
+                    </h1>
+                    <p class="text-xl text-slate-400 mb-10 max-w-lg">
+                        We decode technical complexity to build digital experiences that define the future of your brand.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://wa.me/2347047085448" class="bg-primary px-8 py-4 rounded-xl font-bold text-lg hover:shadow-xl hover:shadow-primary/30 transition-all">Start Project</a>
+                        <a href="portfolio.html" class="border border-slate-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-800 transition-all">View Work</a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhFEPZXk3C9IZnBpIDiivk2yOfWbp1YRnr2BlkkDA0wXeI1mFqlNtSBeJ6w_lP9VnK55FwJysIxCNhaWreLMPFanUskW7bb-CrikvuB7B9-EWfgZk1XEoxf7bepXJs6VUSSBfBgUzE9johMlmv4ACLCko5XPwl0JRKU5BoBISWEU24NvsG7urQVtt-JlJvzoVJDyLpPat9nrTSFfz3473MYeQ8nKLVFlGQHYigQD7Gn39SUt69qoA5q4nsFRflg7JGWBlBbH2SYeE" class="rounded-3xl shadow-2xl border border-primary/20" alt="Tech Hero">
+                </div>
+            </div>
+        </div>
+
+        <div id="slide2" class="slide w-full">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-6xl lg:text-8xl font-bold leading-none mb-8">
+                        CONVERT <br/> <span class="text-primary italic">VISITORS</span>
+                    </h1>
+                    <p class="text-xl text-slate-400 mb-10 max-w-lg">
+                        Turn your digital presence into a high-performance sales engine with our data-driven UI/UX design.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="contact.html" class="bg-primary px-8 py-4 rounded-xl font-bold text-lg hover:shadow-xl hover:shadow-primary/30 transition-all">Free Consultation</a>
+                        <a href="services.html" class="border border-slate-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-800 transition-all">Our Process</a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6djE_y5CWxUtR_j_aiSeaF03UwxasUlpmECAV-EoMLKXhUD6Sfi69k7gIZ509IM81Zg0xJIqOiEIvDNY5w25t7Q5FSWQ3DcOGr2cfSm4690sQHKxc3VeNRtTpdaLmBSeclhB4Afq4_pJGg8RfZpMzb-BLuktIDEeB_EVl8AwWmfDBMeH5zZQFKrSUjj26FvOV_HKq9yYMGpig3IbUVvT4zfsURdDQnD-aWwTn-PNHATCpRywG9TLtVqpiVo6UGl6QfxQ-AvbgPPU" class="rounded-3xl shadow-2xl border border-primary/20" alt="Strategy Hero">
+                </div>
+            </div>
+        </div>
     </header>
 
-    <!-- Tutor Registration Section -->
-    <section class="tutor-section" id="tutor">
-        <div class="tutor-content">
-            <h2>Learn Coding & Web Development Online</h2>
-            <p>Join our hands-on online class to become a professional web developer. No experience needed – just passion to learn!</p>
-            
-            <form id="tutorForm" class="tutor-form">
-                <div class="form-group">
-                    <label for="tutorName">Full Name:</label>
-                    <input type="text" id="tutorName" name="tutor_name" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="tutorEmail">Email Address:</label>
-                    <input type="email" id="tutorEmail" name="tutor_email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="experience">Experience Level:</label>
-                    <select id="experience" name="experience" required>
-                        <option value="" disabled selected>Select your level</option>
-                        <option value="Beginner">Beginner</option>
-                        <option value="Intermediate">Intermediate</option>
-                        <option value="Advanced">Advanced</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="reason">Why do you want to learn coding?</label>
-                    <textarea id="reason" name="reason" rows="4" required></textarea>
-                </div>
-
-                <button type="submit" class="submit-btn">Register Now</button>
-            </form>
+    <section class="py-20 border-y border-primary/10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+            <div>
+                <div class="text-6xl font-bold text-primary">500+</div>
+                <p class="text-slate-500 uppercase tracking-widest mt-2">Happy Clients</p>
+            </div>
+            <div>
+                <div class="text-6xl font-bold text-primary">1.2k</div>
+                <p class="text-slate-500 uppercase tracking-widest mt-2">Projects Completed</p>
+            </div>
+            <div>
+                <div class="text-6xl font-bold text-primary">25+</div>
+                <p class="text-slate-500 uppercase tracking-widest mt-2">Awards Won</p>
+            </div>
         </div>
     </section>
 
-    <!-- EmailJS SDK -->
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <!-- Footer Section -->
-<footer class="site-footer">
-  <div class="footer-container">
-    
-    <!-- Left: Logo and Motto -->
-    <div class="footer-left">
-      <img src="logo.jpg" alt="Decoder Technology Logo">
-      <p class="motto">Motto: <strong>Time & Quality</strong></p>
-    </div>
+    <footer class="py-12 border-t border-primary/10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-slate-500">© 2026 Decoder Technology. All rights reserved.</p>
+            <div class="flex gap-6">
+                <a href="https://wa.me/2347047085448" class="text-primary font-bold">WhatsApp: +234 704 708 5448</a>
+            </div>
+        </div>
+    </footer>
 
-    <!-- Center: Name -->
-    <div class="footer-center">
-      <h2>DECODER TECHNOLOGY</h2>
-    </div>
+    <script>
+        let currentSlide = 1;
+        function toggleSlides() {
+            document.getElementById('slide1').classList.toggle('active');
+            document.getElementById('slide2').classList.toggle('active');
+        }
+        setInterval(toggleSlides, 5000); // Switches every 5 seconds
+    </script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
 
-    <!-- Right: Links and Contact Info -->
-    <div class="footer-right">
-      <ul class="footer-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#book">Book Me</a></li>
-        <li><a href="#contact">Contact Me</a></li>
-        <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#tutor">Tutor</a></li>
-      </ul>
-      <p class="contact-info">
-        📞 Call us: <strong>+(234)7047085448</strong><br>
-        💬 WhatsApp: <strong>+(234)8157273000</strong><br>
-        📧 Message: <a href="mailto:bodionyefe@gmail.com">bodionyefe@gmail.com</a>
-      </p>
-    </div>
+      if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', (e) => {
+              // Prevent the click from bubbling up
+                e.stopPropagation();
 
-  </div>
-</footer>
-
-   <script src="script.js"></script>
-</body> 
+                // Toggle the 'hidden' class
+                const isHidden = mobileMenu.classList.contains('hidden');
+                
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    menuIcon.innerText = 'close'; // Changes hamburger to X
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.innerText = 'menu'; // Changes X back to hamburger
+                }
+            });
+        }
+    });
+</script>
+</body>
 </html>
